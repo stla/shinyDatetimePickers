@@ -1,0 +1,16 @@
+.MuiPaper-root .MuiTypography-body1 {
+  font-size: 2rem;
+  line-height: 0.95;
+}
+.MuiPaper-root .MuiTypography-caption {
+  font-size: 1.3rem;
+}
+.MuiPaper-root .MuiTypography-body2 {
+  font-size: 1.5rem;
+}
+.MuiPaper-root .MuiSvgIcon-root {
+  font-size: 2.5rem;
+}
+.MuiPaper-root .MuiButton-root {
+  font-size: 1.5rem;
+}

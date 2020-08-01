@@ -14,7 +14,7 @@ cssDependency <- htmltools::htmlDependency(
     ),
     paste0(
       "datetime-mui-picker/",
-      c("FrontUI.css")
+      c("FrontUI.css", "Calendar.css")
     )
   )
 )
