@@ -294,6 +294,8 @@ class MUIwidget extends React.PureComponent {
           onChange={this.onChange}
           ampm={false}
           label={this.props.label}
+          disableFuture={this.props.disableFuture}
+          disablePast={this.props.disablePast}
           size="medium"
           inputVariant="outlined"
           showTodayButton
@@ -324,6 +326,8 @@ const MUIinput = ({ configuration, value, setValue }) => {
       shinyId={configuration.shinyId}
       value={configuration.value}
       label={configuration.label}
+      disableFuture={configuration.disableFuture}
+      disablePast={configuration.disablePast}
     />
   );
 };

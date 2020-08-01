@@ -7,7 +7,9 @@
 #'
 #' @export
 datetimeMaterialPickerInput <- function(
-  inputId, value = NULL, label = "", style = NULL
+  inputId, value = NULL, label = NULL,
+  disablePast = FALSE, disableFuture = FALSE,
+  style = NULL
 ) {
   if(is.null(value)) value <- Sys.time()
   reactR::createReactShinyInput(
@@ -27,7 +29,9 @@ datetimeMaterialPickerInput <- function(
     list(
       shinyId = inputId,
       value = datetime2list(value, sec = TRUE),
-      label = label
+      label = label,
+      disableFuture = disableFuture,
+      disablePast = disablePast
     ),
     container = function(...) htmltools::tags$div(..., style = style)
   )
