@@ -295,6 +295,8 @@ class MUIwidget extends React.PureComponent {
           ampm={false}
           label={this.props.label}
           size="medium"
+          inputVariant="outlined"
+          showTodayButton
         />
       </MuiPickersUtilsProvider>
 /*       <form style={styles.container} noValidate>
