@@ -1,0 +1,4 @@
+.datetimeMaterialPicker .MuiInputBase-root,
+.datetimeMaterialPicker .MuiFormLabel-root {
+  font-size: 2rem;
+}

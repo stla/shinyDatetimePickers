@@ -1,0 +1,28 @@
+.timepicker-header {
+    background-color: #27272f;
+    height: 48px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 30px;
+}
+.timepicker-header > .header-displaytime {
+    padding-top: 2px;
+}
+.timepicker-slider .slider-label {
+    margin-bottom: 10px;
+}
+.timepicker-slider > div {
+    margin: 30px;
+}
+.timepicker-slider .slider-label {
+    text-align: left;
+}
+.timepicker-slider .track {
+    height: 5px;
+}
+.timepicker-slider .trackbefore, .timepicker-slider .thumb {
+    background-color: #27272f;
+}
+.timepicker-slider .trackafter {
+    background-color: #32323f;
+}

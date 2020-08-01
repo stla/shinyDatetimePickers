@@ -1,0 +1,27 @@
+.picker {
+    width: 400px;
+    background-color: #717886;
+    color: #eeeeee;
+}
+.picker-tab .MuiTab-root {
+    width: 50%;
+}
+.picker .picker-tab .selected {
+    background-color: #27272f;
+}
+.picker-form {
+    height: 300px;
+}
+.picker .picker-tab-indicator {
+    display: none;
+}
+.picker-footer {
+    padding: 12px;
+}
+.picker-footer button {
+    background-color: #27272f;
+    color: #eeeeee;
+}
+.picker-footer button svg {
+    margin-right: 5px;
+}
