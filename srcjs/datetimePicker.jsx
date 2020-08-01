@@ -148,9 +148,12 @@ class RDSPwidget extends React.PureComponent {
       date: this.state.date,
       time: this.state.time
     });
+    Shiny.setInputValue(this.props.shinyId + "_save", true, {
+      priority: "event"
+    });
   }
 
-  componentDidMount() {
+/*   componentDidMount() {
     let state = this.state,
       id = this.props.shinyId + ":shinyDatetimePickers.date";
     setTimeout(function () {
@@ -160,7 +163,7 @@ class RDSPwidget extends React.PureComponent {
       });
     }, 0);
   }
-
+ */
   render() {
     const language = (this.props.language === 'ko') ? Language['ko'] : Language['en'];
 
@@ -214,6 +217,16 @@ class RDSPwidget extends React.PureComponent {
 
 
 const RDSPinput = ({ configuration, value, setValue }) => {
+  if(configuration.save) {
+    let id = configuration.shinyId + ":shinyDatetimePickers.date";
+    setTimeout(function () {
+      Shiny.setInputValue(id, {
+        date: value.date,
+        time: value.time
+      });
+    }, 0);
+  }
+
   return (
     <RDSPwidget
       setShinyValue={setValue}
