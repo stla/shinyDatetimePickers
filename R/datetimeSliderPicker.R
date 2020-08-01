@@ -12,6 +12,42 @@
 #' @importFrom htmltools htmlDependency tags
 #'
 #' @export
+#'
+#' @examples if(interactive()){
+#' library(shinyDatetimePickers)
+#' library(shiny)
+#'
+#' ui <- fluidPage(
+#'   sidebarLayout(
+#'     sidebarPanel(
+#'       actionButton("setdt", label = as.character(Sys.time()),
+#'                    class = "btn-info")
+#'     ),
+#'     mainPanel()
+#'   )
+#' )
+#'
+#' server <- function(input, output, session){
+#'
+#'   datetime <- reactiveVal(Sys.time())
+#'
+#'   observeEvent(input[["setdt"]], {
+#'     showModal(modalDialog(
+#'       datetimeSliderPickerInput("dtspicker", save = TRUE, value = datetime())
+#'     ))
+#'   })
+#'
+#'   observeEvent(input[["dtspicker_save"]], {
+#'     datetime(input[["dtspicker"]])
+#'     removeModal()
+#'     updateActionButton(session, "setdt",
+#'                        label = as.character(input[["dtspicker"]]))
+#'   })
+#'
+#' }
+#'
+#' shinyApp(ui, server)
+#' }
 datetimeSliderPickerInput <- function(
   inputId, value = NULL,
   second = FALSE, save = FALSE)

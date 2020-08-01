@@ -19,3 +19,40 @@ initial value is set to the system time}
 \description{
 A datetime picker for a Shiny UI.
 }
+\examples{
+if(interactive()){
+library(shinyDatetimePickers)
+library(shiny)
+
+ui <- fluidPage(
+  sidebarLayout(
+    sidebarPanel(
+      actionButton("setdt", label = as.character(Sys.time()),
+                   class = "btn-info")
+    ),
+    mainPanel()
+  )
+)
+
+server <- function(input, output, session){
+
+  datetime <- reactiveVal(Sys.time())
+
+  observeEvent(input[["setdt"]], {
+    showModal(modalDialog(
+      datetimeSliderPickerInput("dtspicker", save = TRUE, value = datetime())
+    ))
+  })
+
+  observeEvent(input[["dtspicker_save"]], {
+    datetime(input[["dtspicker"]])
+    removeModal()
+    updateActionButton(session, "setdt",
+                       label = as.character(input[["dtspicker"]]))
+  })
+
+}
+
+shinyApp(ui, server)
+}
+}

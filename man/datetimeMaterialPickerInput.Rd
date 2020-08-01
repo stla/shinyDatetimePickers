@@ -4,7 +4,14 @@
 \alias{datetimeMaterialPickerInput}
 \title{<Add Title>}
 \usage{
-datetimeMaterialPickerInput(inputId, value = NULL, style = NULL)
+datetimeMaterialPickerInput(
+  inputId,
+  value = NULL,
+  label = NULL,
+  disablePast = FALSE,
+  disableFuture = FALSE,
+  style = NULL
+)
 }
 \description{
 <Add Description>
