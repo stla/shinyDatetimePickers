@@ -10,7 +10,7 @@ import { CheckCircleOutline, Today, AccessTime } from '@material-ui/icons';
 import Language from 'react-datetime-slider-picker/public/Language';
 
 //import { makeStyles } from "@material-ui/core/styles";
-i//mport TextField from "@material-ui/core/TextField";
+//import TextField from "@material-ui/core/TextField";
 import { DateTimePicker as MuiDateTimePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
 
@@ -21,10 +21,10 @@ class RDPwidget extends React.PureComponent {
   constructor(props) {
     super(props);
     let v = this.props.value,
-    date = new Date(Date.UTC(
+    date = new Date(//Date.UTC(
       v.date.year, v.date.month-1, v.date.date,
       v.time.hour, v.time.minute, v.time.second
-    ));
+    );
     this.state = {
       value: date
     };
@@ -34,18 +34,17 @@ class RDPwidget extends React.PureComponent {
   onChange(value) {
     let x = {
       date: {
-        year: value.getUTCFullYear(),
-        month: value.getUTCMonth() + 1,
-        date: value.getUTCDate()
+        year: value.getFullYear(),
+        month: value.getMonth() + 1,
+        date: value.getDate()
       },
       time: {
-        hour: value.getUTCHours(),
-        minute: value.getUTCMinutes(),
-        second: value.getUTCSeconds()
+        hour: value.getHours(),
+        minute: value.getMinutes(),
+        second: value.getSeconds()
       }
     };
     Shiny.setInputValue(this.props.shinyId + ":shinyDatetimePickers.date", x);
-    console.log("value", x);
     this.setState({ value: value });
   }
 
@@ -294,7 +293,7 @@ class MUIwidget extends React.PureComponent {
           value={this.state.value}
           onChange={this.onChange}
           ampm={false}
-          label="xxxx"
+          label={this.props.label}
           size="medium"
         />
       </MuiPickersUtilsProvider>
@@ -322,6 +321,7 @@ const MUIinput = ({ configuration, value, setValue }) => {
     <MUIwidget 
       shinyId={configuration.shinyId}
       value={configuration.value}
+      label={configuration.label}
     />
   );
 };
