@@ -76,13 +76,13 @@ datetimeSliderPickerInput <- function(
   )
 }
 
-# #' <Add Title>
-# #'
-# #' <Add Description>
-# #'
-# #' @export
-# updateDatetimePickerInput <- function(session, inputId, value, configuration = NULL) {
-#   message <- list(value = value)
-#   if (!is.null(configuration)) message$configuration <- configuration
-#   session$sendInputMessage(inputId, message);
-# }
+#' <Add Title>
+#'
+#' <Add Description>
+#'
+#' @export
+updateDatetimeSliderPickerInput <- function(session, inputId, value, configuration = NULL) {
+  message <- list(value = datetime2list(value, sec = TRUE))
+  if (!is.null(configuration)) message$configuration <- configuration
+  session$sendInputMessage(paste0(inputId, "-input"), message);
+}

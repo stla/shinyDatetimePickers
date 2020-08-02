@@ -106,7 +106,8 @@ class RDSPwidget extends React.PureComponent {
     this.state = {
       tab: 0,
       date: this.props.value.date,
-      time: this.props.value.time
+      time: this.props.value.time,
+      counter: 1
     };
 
     this.onTabChange = this.onTabChange.bind(this);
@@ -152,6 +153,24 @@ class RDSPwidget extends React.PureComponent {
       priority: "event"
     });
   }
+
+  componentWillReceiveProps(nextProps) {
+    let that = this;
+    setTimeout(function() {
+      Shiny.setInputValue(that.props.shinyId + ":shinyDatetimePickers.date", {
+        date: nextProps.value.date,
+        time: nextProps.value.time
+      });
+    }, 0);
+    this.setState({ date: nextProps.value.date, time: nextProps.value.time });
+    let tab = this.state.tab;
+    this.setState({ tab: 1-tab });
+    setTimeout(function() {
+      that.setState({ tab: tab });
+    }, 0);
+  }
+
+  
 
 /*   componentDidMount() {
     let state = this.state,
