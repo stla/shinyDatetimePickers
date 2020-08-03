@@ -1,10 +1,10 @@
-#' Datetime picker
-#'
-#' A datetime picker for a Shiny UI.
+#' Datetime picker with sliders
+#' @description A datetime picker for a Shiny UI.
 #'
 #' @param inputId the input slot that will be used to access the value
-#' @param value initial value of the datetime picker; if \code{NULL}, the
-#'   initial value is set to the system time
+#' @param value initial value, either a \code{POSIXct} object, or an object
+#'   coercible to a \code{POSIXct} object;
+#'   if \code{NULL}, it is set to the current time
 #' @param second logical, whether to enable the second picker
 #' @param save logical, whether to enable the 'save' button
 #'
@@ -53,9 +53,7 @@ datetimeSliderPickerInput <- function(
   second = FALSE, save = FALSE)
 {
 
-  if(is.null(value)) {
-    value <- Sys.time()
-  }
+  value <- if(is.null(value)) Sys.time() else as.POSIXct(value)
 
   reactR::createReactShinyInput(
     paste0(inputId, "-input"),

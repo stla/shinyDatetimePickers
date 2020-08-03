@@ -2,15 +2,16 @@
 % Please edit documentation in R/datetimeSliderPicker.R
 \name{datetimeSliderPickerInput}
 \alias{datetimeSliderPickerInput}
-\title{Datetime picker}
+\title{Datetime picker with sliders}
 \usage{
 datetimeSliderPickerInput(inputId, value = NULL, second = FALSE, save = FALSE)
 }
 \arguments{
 \item{inputId}{the input slot that will be used to access the value}
 
-\item{value}{initial value of the datetime picker; if \code{NULL}, the
-initial value is set to the system time}
+\item{value}{initial value, either a \code{POSIXct} object, or an object
+coercible to a \code{POSIXct} object;
+if \code{NULL}, it is set to the current time}
 
 \item{second}{logical, whether to enable the second picker}
 

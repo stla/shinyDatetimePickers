@@ -64,6 +64,7 @@ class RDPwidget extends React.PureComponent {
         format="y-MM-dd hh:mm:ss a"
         showLeadingZeros={true}
         clearIcon={null}
+        calendarIcon={null}
         amPmAriaLabel="Select AM/PM"
         calendarAriaLabel="Toggle calendar"
         clearAriaLabel="Clear value"

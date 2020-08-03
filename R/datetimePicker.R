@@ -1,14 +1,51 @@
-#' <Add Title>
+#' Datetime picker
+#' @description A datetime picker for a Shiny UI.
 #'
-#' <Add Description>
+#' @param inputId the input slot that will be used to access the value
+#' @param value initial value, either a \code{POSIXct} object, or an object
+#'   coercible to a \code{POSIXct} object;
+#'   if \code{NULL}, it is set to the current time
+#' @param style inline CSS for the container
 #'
-#' @importFrom shiny restoreInput
 #' @importFrom reactR createReactShinyInput
 #' @importFrom htmltools htmlDependency tags
-#'
 #' @export
+#'
+#' @examples if(interactive()){
+#'
+#' library(shinyDatetimePickers)
+#' library(shiny)
+#'
+#' ui <- fluidPage(
+#'   br(),
+#'   sidebarLayout(
+#'     sidebarPanel(
+#'       tags$fieldset(
+#'         tags$legend("Click to change time"),
+#'         datetimePickerInput(
+#'           "dtpicker",
+#'           style =
+#'             "font-family: Montserrat, 'Segoe UI', Tahoma, sans-serif;"
+#'         )
+#'       )
+#'     ),
+#'     mainPanel(
+#'       verbatimTextOutput("dtpicker")
+#'     )
+#'   )
+#' )
+#'
+#' server <- function(input, output){
+#'   output[["dtpicker"]] <- renderPrint({
+#'     input[["dtpicker"]]
+#'   })
+#' }
+#'
+#' shinyApp(ui, server)
+#'
+#' }
 datetimePickerInput <- function(inputId, value = NULL, style = NULL) {
-  if(is.null(value)) value <- Sys.time()
+  value <- if(is.null(value)) Sys.time() else as.POSIXct(value)
   reactR::createReactShinyInput(
     inputId,
     "datetimePicker",

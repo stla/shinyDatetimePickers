@@ -1,17 +1,57 @@
-#' <Add Title>
+#' Material design datetime picker
+#' @description A datetime picker for a Shiny UI.
 #'
-#' <Add Description>
+#' @param inputId the input slot that will be used to access the value
+#' @param label a label, a character string (HTML is not allowed), or
+#'   \code{NULL} for no label
+#' @param value initial value, either a \code{POSIXct} object, or an object
+#'   coercible to a \code{POSIXct} object;
+#'   if \code{NULL}, it is set to the current time
+#' @param disablePast logical, whether to disable past dates
+#' @param disableFuture logical, whether to disable future dates
+#' @param style inline CSS for the container
 #'
 #' @importFrom reactR createReactShinyInput
 #' @importFrom htmltools htmlDependency tags
-#'
 #' @export
+#'
+#' @examples if(interactive()){
+#'
+#' library(shinyDatetimePickers)
+#' library(shiny)
+#'
+#' ui <- fluidPage(
+#'   br(),
+#'   sidebarLayout(
+#'     sidebarPanel(
+#'       datetimeMaterialPickerInput(
+#'         "dtmpicker",
+#'         label = "Appointment",
+#'         disablePast = TRUE
+#'       )
+#'     ),
+#'     mainPanel(
+#'       verbatimTextOutput("dtmpicker")
+#'     )
+#'   )
+#' )
+#'
+#' server <- function(input, output){
+#'   output[["dtmpicker"]] <- renderPrint({
+#'     input[["dtmpicker"]]
+#'   })
+#' }
+#'
+#' shinyApp(ui, server)
+#'
+#' }
 datetimeMaterialPickerInput <- function(
-  inputId, value = NULL, label = NULL,
+  inputId, label = NULL, value = NULL,
   disablePast = FALSE, disableFuture = FALSE,
   style = NULL
 ) {
-  if(is.null(value)) value <- Sys.time()
+  label <- if(!is.null(label)) as.character(label)
+  value <- if(is.null(value)) Sys.time() else as.POSIXct(value)
   reactR::createReactShinyInput(
     inputId,
     "datetimeMaterialPicker",

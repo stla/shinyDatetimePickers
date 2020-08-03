@@ -2,10 +2,54 @@
 % Please edit documentation in R/datetimePicker.R
 \name{datetimePickerInput}
 \alias{datetimePickerInput}
-\title{<Add Title>}
+\title{Datetime picker}
 \usage{
 datetimePickerInput(inputId, value = NULL, style = NULL)
 }
+\arguments{
+\item{inputId}{the input slot that will be used to access the value}
+
+\item{value}{initial value, either a \code{POSIXct} object, or an object
+coercible to a \code{POSIXct} object;
+if \code{NULL}, it is set to the current time}
+
+\item{style}{inline CSS for the container}
+}
 \description{
-<Add Description>
+A datetime picker for a Shiny UI.
+}
+\examples{
+if(interactive()){
+
+library(shinyDatetimePickers)
+library(shiny)
+
+ui <- fluidPage(
+  br(),
+  sidebarLayout(
+    sidebarPanel(
+      tags$fieldset(
+        tags$legend("Click to change time"),
+        datetimePickerInput(
+          "dtpicker",
+          style =
+            "font-family: Montserrat, 'Segoe UI', Tahoma, sans-serif;"
+        )
+      )
+    ),
+    mainPanel(
+      verbatimTextOutput("dtpicker")
+    )
+  )
+)
+
+server <- function(input, output){
+  output[["dtpicker"]] <- renderPrint({
+    input[["dtpicker"]]
+  })
+}
+
+shinyApp(ui, server)
+
+}
 }

@@ -2,17 +2,65 @@
 % Please edit documentation in R/datetimeMaterialPicker.R
 \name{datetimeMaterialPickerInput}
 \alias{datetimeMaterialPickerInput}
-\title{<Add Title>}
+\title{Material design datetime picker}
 \usage{
 datetimeMaterialPickerInput(
   inputId,
-  value = NULL,
   label = NULL,
+  value = NULL,
   disablePast = FALSE,
   disableFuture = FALSE,
   style = NULL
 )
 }
+\arguments{
+\item{inputId}{the input slot that will be used to access the value}
+
+\item{label}{a label, a character string (HTML is not allowed), or
+\code{NULL} for no label}
+
+\item{value}{initial value, either a \code{POSIXct} object, or an object
+coercible to a \code{POSIXct} object;
+if \code{NULL}, it is set to the current time}
+
+\item{disablePast}{logical, whether to disable past dates}
+
+\item{disableFuture}{logical, whether to disable future dates}
+
+\item{style}{inline CSS for the container}
+}
 \description{
-<Add Description>
+A datetime picker for a Shiny UI.
+}
+\examples{
+if(interactive()){
+
+library(shinyDatetimePickers)
+library(shiny)
+
+ui <- fluidPage(
+  br(),
+  sidebarLayout(
+    sidebarPanel(
+      datetimeMaterialPickerInput(
+        "dtmpicker",
+        label = "Appointment",
+        disablePast = TRUE
+      )
+    ),
+    mainPanel(
+      verbatimTextOutput("dtmpicker")
+    )
+  )
+)
+
+server <- function(input, output){
+  output[["dtmpicker"]] <- renderPrint({
+    input[["dtmpicker"]]
+  })
+}
+
+shinyApp(ui, server)
+
+}
 }
