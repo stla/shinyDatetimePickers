@@ -258,7 +258,7 @@ const RDSPinput = ({ configuration, value, setValue }) => {
   );
 };
 
-reactShinyInput('.datetimeSliderPicker', 'shinyDatetimePicker.datetimeSliderPicker', RDSPinput);
+reactShinyInput('.datetimeSliderPicker', 'shinyDatetimePickers.datetimeSliderPicker', RDSPinput);
 
 
 

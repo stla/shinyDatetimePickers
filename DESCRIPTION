@@ -1,15 +1,27 @@
 Package: shinyDatetimePickers
-Title: What the Package Does (One Line, Title Case)
+Title: Datetime Pickers for 'Shiny'
 Version: 0.0.0.9000
-Authors@R: 
-    person(given = "First",
-           family = "Last",
+Authors@R: c(
+    person(given = "Stéphane",
+           family = "Laurent",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+           email = "laurent_step@outlook.fr"),
+    person(given = "Wojciech",
+           family = "Maj",
+           role = c("ctb", "cph"),
+           email = "kontakt@wojtekmaj.pl",
+           comment = "'react-datetime-picker' library (https://github.com/wojtekmaj/react-datetime-picker)"),
+    person(given = "Porinn",
+           role = c("ctb", "cph"),
+           comment = "'react-datetime-slider-picker' library (https://github.com/Porinn/react-datetime-slider-picker)"),
+    person(given = "Dmitriy",
+           family = "Kovalenko",
+           role = c("ctb", "cph"),
+           email = "dmtr.kovalenko@outlook.com",
+           comment = "'material-ui-pickers' library (https://github.com/mui-org/material-ui-pickers)")
+    )
+Description: Provides three types of datetime pickers for usage in a Shiny UI.
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
