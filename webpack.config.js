@@ -9,13 +9,24 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.jsx?$/,
-                loader: 'babel-loader',
-                options: {
-                    presets: ['@babel/preset-env', '@babel/preset-react']
+        {
+          test: /\.jsx?$/,
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              [
+                '@babel/preset-env',
+                {
+                  targets: {
+                    esmodules: true
+                  }
                 }
-            },
+              ],
+              '@babel/preset-react'
+            ],
+            plugins: ["@babel/plugin-syntax-dynamic-import"]
+          }
+        },
             {
                 test: /\.css$/,
                 use: 'css-loader'
