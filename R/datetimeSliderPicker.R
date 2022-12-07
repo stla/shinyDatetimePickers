@@ -13,6 +13,8 @@
 #'
 #' @export
 #'
+#' @return A \code{shiny.tag} object that can be included in a Shiny UI.
+#'
 #' @examples if(interactive()){
 #' library(shinyDatetimePickers)
 #' library(shiny)

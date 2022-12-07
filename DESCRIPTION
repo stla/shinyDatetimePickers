@@ -20,7 +20,7 @@ Authors@R: c(
            email = "dmtr.kovalenko@outlook.com",
            comment = "'material-ui-pickers' library (https://github.com/mui-org/material-ui-pickers)")
     )
-Description: Provides three types of datetime pickers for usage in a 'Shiny' UI.
+Description: Provides three types of datetime pickers for usage in a 'Shiny' UI. A datetime picker is an input field for selecting both a date and a time.
 License: GPL-3
 Encoding: UTF-8
 RoxygenNote: 7.2.2

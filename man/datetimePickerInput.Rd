@@ -15,6 +15,9 @@ if \code{NULL}, it is set to the current time}
 
 \item{style}{inline CSS for the container}
 }
+\value{
+A \code{shiny.tag} object that can be included in a Shiny UI.
+}
 \description{
 A datetime picker for a Shiny UI.
 }

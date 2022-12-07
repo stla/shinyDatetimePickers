@@ -17,6 +17,9 @@ if \code{NULL}, it is set to the current time}
 
 \item{save}{logical, whether to enable the 'save' button}
 }
+\value{
+A \code{shiny.tag} object that can be included in a Shiny UI.
+}
 \description{
 A datetime picker for a Shiny UI.
 }
