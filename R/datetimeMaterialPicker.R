@@ -59,7 +59,7 @@ datetimeMaterialPickerInput <- function(
       htmltools::htmlDependency(
         name = "datetimePicker-input",
         version = "1.0.0",
-        src = "www/shinyDatetimePickers/datetimePicker",
+        src = "www/datetimePicker",
         package = "shinyDatetimePickers",
         script = "datetimePicker.js"
       ),

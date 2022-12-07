@@ -4,7 +4,7 @@ module.exports = {
     mode: 'development',
     entry: path.join(__dirname, 'srcjs', 'datetimePicker.jsx'),
     output: {
-        path: path.join(__dirname, 'inst/www/shinyDatetimePickers/datetimePicker'),
+        path: path.join(__dirname, 'inst/www/datetimePicker'),
         filename: 'datetimePicker.js'
     },
     module: {

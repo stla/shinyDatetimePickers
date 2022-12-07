@@ -1,7 +1,7 @@
 cssDependency <- htmltools::htmlDependency(
   name = "datetimePicker-css",
   version = "1.0.0",
-  src = "www/shinyDatetimePickers/datetimePicker/css",
+  src = "www/datetimePicker/css",
   package = "shinyDatetimePickers",
   stylesheet = c(
     paste0(

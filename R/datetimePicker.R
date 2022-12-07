@@ -53,7 +53,7 @@ datetimePickerInput <- function(inputId, value = NULL, style = NULL) {
       htmltools::htmlDependency(
         name = "datetimePicker-input",
         version = "1.0.0",
-        src = "www/shinyDatetimePickers/datetimePicker",
+        src = "www/datetimePicker",
         package = "shinyDatetimePickers",
         script = "datetimePicker.js"
       ),
@@ -68,13 +68,13 @@ datetimePickerInput <- function(inputId, value = NULL, style = NULL) {
   )
 }
 
-#' <Add Title>
-#'
-#' <Add Description>
-#'
-#' @export
-updateDatetimePickerInput <- function(session, inputId, value, configuration = NULL) {
-  message <- list(value = value)
-  if (!is.null(configuration)) message$configuration <- configuration
-  session$sendInputMessage(inputId, message);
-}
+# #' <Add Title>
+# #'
+# #' <Add Description>
+# #'
+# #' @export
+# updateDatetimePickerInput <- function(session, inputId, value, configuration = NULL) {
+#   message <- list(value = value)
+#   if (!is.null(configuration)) message$configuration <- configuration
+#   session$sendInputMessage(inputId, message);
+# }

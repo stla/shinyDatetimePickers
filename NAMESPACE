@@ -3,8 +3,6 @@
 export(datetimeMaterialPickerInput)
 export(datetimePickerInput)
 export(datetimeSliderPickerInput)
-export(updateDatetimePickerInput)
-export(updateDatetimeSliderPickerInput)
 import(lubridate)
 importFrom(htmltools,htmlDependency)
 importFrom(htmltools,tags)
