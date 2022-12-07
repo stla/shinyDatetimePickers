@@ -9,3 +9,4 @@
 ^package\.json$
 ^webpack\.config\.js$
 ^yarn\.lock$
+^cran-comments\.md$

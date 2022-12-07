@@ -1,6 +1,6 @@
 Package: shinyDatetimePickers
 Title: Some Datetime Pickers for 'Shiny'
-Version: 0.0.0.9000
+Version: 1.0.0
 Authors@R: c(
     person(given = "Stéphane",
            family = "Laurent",
@@ -8,15 +8,15 @@ Authors@R: c(
            email = "laurent_step@outlook.fr"),
     person(given = "Wojciech",
            family = "Maj",
-           role = c("ctb", "cph"),
+           role = "cph",
            email = "kontakt@wojtekmaj.pl",
            comment = "'react-datetime-picker' library (https://github.com/wojtekmaj/react-datetime-picker)"),
     person(given = "Porinn",
-           role = c("ctb", "cph"),
+           role = "cph",
            comment = "'react-datetime-slider-picker' library (https://github.com/Porinn/react-datetime-slider-picker)"),
     person(given = "Dmitriy",
            family = "Kovalenko",
-           role = c("ctb", "cph"),
+           role = "cph",
            email = "dmtr.kovalenko@outlook.com",
            comment = "'material-ui-pickers' library (https://github.com/mui-org/material-ui-pickers)")
     )
