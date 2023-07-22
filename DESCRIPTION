@@ -1,31 +1,25 @@
 Package: shinyDatetimePickers
 Title: Some Datetime Pickers for 'Shiny'
-Version: 1.0.0
+Version: 1.0.1
 Authors@R: c(
-    person(given = "Stéphane",
-           family = "Laurent",
-           role = c("aut", "cre"),
-           email = "laurent_step@outlook.fr"),
-    person(given = "Wojciech",
-           family = "Maj",
-           role = "cph",
-           email = "kontakt@wojtekmaj.pl",
+    person("Stéphane", "Laurent", , "laurent_step@outlook.fr", role = c("aut", "cre")),
+    person("Wojciech", "Maj", , "kontakt@wojtekmaj.pl", role = "cph",
            comment = "'react-datetime-picker' library (https://github.com/wojtekmaj/react-datetime-picker)"),
-    person(given = "Porinn",
-           role = "cph",
+    person("Porinn", role = "cph",
            comment = "'react-datetime-slider-picker' library (https://github.com/Porinn/react-datetime-slider-picker)"),
-    person(given = "Dmitriy",
-           family = "Kovalenko",
-           role = "cph",
-           email = "dmtr.kovalenko@outlook.com",
+    person("Dmitriy", "Kovalenko", , "dmtr.kovalenko@outlook.com", role = "cph",
            comment = "'material-ui-pickers' library (https://github.com/mui-org/material-ui-pickers)")
-    )
-Description: Provides three types of datetime pickers for usage in a 'Shiny' UI. A datetime picker is an input field for selecting both a date and a time.
+  )
+Description: Provides three types of datetime pickers for usage in a
+    'Shiny' UI. A datetime picker is an input field for selecting both a
+    date and a time.
 License: GPL-3
-Encoding: UTF-8
-RoxygenNote: 7.2.2
+URL: https://github.com/stla/shinyDatetimePickers
+BugReports: https://github.com/stla/shinyDatetimePickers/issues
 Imports: 
     htmltools,
-    shiny,
+    lubridate,
     reactR,
-    lubridate
+    shiny
+Encoding: UTF-8
+RoxygenNote: 7.2.2
