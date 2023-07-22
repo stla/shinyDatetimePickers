@@ -1,6 +1,6 @@
-# shinyDatetimePickers 1.0.1
+# shinyDatetimePickers 1.1.0
 
-Completed DESCRIPTION file.
+Upgraded some JavaScript libraries.
 
 
 # shinyDatetimePickers 1.0.0

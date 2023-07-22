@@ -1,1 +1,1 @@
-I've just completed the DESCRIPTION file.
+R CMD Check is OK.
