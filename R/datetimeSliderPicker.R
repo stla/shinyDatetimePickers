@@ -76,13 +76,17 @@ datetimeSliderPickerInput <- function(
   )
 }
 
-# #' <Add Title>
-# #'
-# #' <Add Description>
-# #'
-# #' @export
-# updateDatetimeSliderPickerInput <- function(session, inputId, value, configuration = NULL) {
-#   message <- list(value = datetime2list(value, sec = TRUE))
-#   if (!is.null(configuration)) message$configuration <- configuration
-#   session$sendInputMessage(paste0(inputId, "-input"), message);
-# }
+#' @title Update a datetime slider picker widget
+#' @description Change the value of a datetime slider picker input.
+#' @param session the Shiny \code{session} object
+#' @param inputId the id of the datetime slider picker widget to be updated
+#' @param value new value for the datetime slider picker widget
+#'
+#' @return No returned value, this just updates the widget.
+#' @export
+updateDatetimeSliderPickerInput <- function(session, inputId, value) {
+  session$sendCustomMessage(
+    paste0("updateValue_", inputId),
+    datetime2list(value, sec = TRUE)
+  )
+}

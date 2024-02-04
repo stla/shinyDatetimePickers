@@ -57,6 +57,19 @@ class RDPwidget extends React.PureComponent {
 
   // jshint ignore: start
   render() {
+
+    const updateValue = (v) => {
+      let value = new Date(
+        v.date.year, v.date.month-1, v.date.date,
+        v.time.hour, v.time.minute, v.time.second
+      );
+      this.onChange(value);
+    };
+
+    Shiny.addCustomMessageHandler("updateValue_" + this.props.shinyId, function(x) {
+      updateValue(x);
+    });
+
     return (
       <DateTimePicker
         onChange={this.onChange}
@@ -108,6 +121,9 @@ class RDSPwidget extends React.PureComponent {
       tab: 0,
       date: this.props.value.date,
       time: this.props.value.time,
+      currentHour: this.props.value.time.hour,
+      currentMinute: this.props.value.time.minute,
+      currentSecond: this.props.value.time.second,
       counter: 1
     };
 
@@ -171,6 +187,12 @@ class RDSPwidget extends React.PureComponent {
     }, 0);
   }
 
+  componentDidMount() {
+    let that = this;
+    setTimeout(function(){
+      that.setState({time: that.state.time});
+    }, 0);
+  }
   
 
 /*   componentDidMount() {
@@ -185,6 +207,33 @@ class RDSPwidget extends React.PureComponent {
   }
  */
   render() {
+
+    const updateValue = (value) => {
+      let date = value.date;
+      let time = value.time;
+      // if(!this.props.enableSecond) {
+      //   delete time.second;
+      // }
+      this.setState({ 
+        currentHour: time.hour,
+        currentMinute: time.minute,
+        currentSecond: time.second
+      });
+      //this.props.onChange();
+      let id = this.props.shinyId + ":shinyDatetimePickers.date";
+      setTimeout(function () {
+        Shiny.setInputValue(id, {
+          date: date,
+          time: time
+        });
+      }, 0);      
+    };
+
+    Shiny.addCustomMessageHandler("updateValue_" + this.props.shinyId, function(x) {
+      updateValue(x);
+    });
+
+
     const language = (this.props.language === 'ko') ? Language['ko'] : Language['en'];
 
     return (
