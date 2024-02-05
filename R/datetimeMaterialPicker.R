@@ -79,13 +79,17 @@ datetimeMaterialPickerInput <- function(
   )
 }
 
-# #' <Add Title>
-# #'
-# #' <Add Description>
-# #'
-# #' @export
-# updateDatetimePickerInput <- function(session, inputId, value, configuration = NULL) {
-#   message <- list(value = value)
-#   if (!is.null(configuration)) message$configuration <- configuration
-#   session$sendInputMessage(inputId, message);
-# }
+#' @title Update a datetime material picker widget
+#' @description Change the value of a datetime material picker input.
+#' @param session the Shiny \code{session} object
+#' @param inputId the id of the datetime material picker widget to be updated
+#' @param value new value for the datetime material picker widget
+#'
+#' @return No returned value, this just updates the widget.
+#' @export
+updateDatetimeMaterialPickerInput <- function(session, inputId, value) {
+  session$sendCustomMessage(
+    paste0("updateValue_", inputId),
+    datetime2list(value, sec = TRUE)
+  )
+}

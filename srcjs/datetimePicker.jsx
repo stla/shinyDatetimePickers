@@ -349,8 +349,6 @@ class MUIwidget extends React.PureComponent {
       }
     };
     Shiny.setInputValue(this.props.shinyId + ":shinyDatetimePickers.date", x);
-    console.log("x", x);
-    console.log("value", value);
     this.setState({ value: value });
   }
 
@@ -362,6 +360,19 @@ class MUIwidget extends React.PureComponent {
   }
 
   render() {
+
+    const updateValue = (v) => {
+      let value = new Date(
+        v.date.year, v.date.month-1, v.date.date,
+        v.time.hour, v.time.minute, v.time.second
+      );
+      this.onChange(value);
+    };
+
+    Shiny.addCustomMessageHandler("updateValue_" + this.props.shinyId, function(x) {
+      updateValue(x);
+    });
+
     return (
       <MuiPickersUtilsProvider utils={DateFnsUtils}>
         <MuiDateTimePicker
