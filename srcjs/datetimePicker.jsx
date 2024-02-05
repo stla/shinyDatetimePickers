@@ -5,7 +5,8 @@ import DateTimePicker from 'react-datetime-picker';
 
 import Calendar from 'react-datetime-slider-picker/dist/Calendar';
 import TimePicker from 'react-datetime-slider-picker/dist/TimePicker';
-import { Tabs, Tab, Button } from '@material-ui/core';
+import { AppBar, Tab, Button } from '@material-ui/core';
+import { TabContext, TabList, TabPanel } from '@material-ui/lab';
 import { CheckCircleOutline, Today, AccessTime } from '@material-ui/icons';
 import Language from 'react-datetime-slider-picker/public/Language';
 
@@ -121,10 +122,10 @@ class RDSPwidget extends React.PureComponent {
       tab: 0,
       date: this.props.value.date,
       time: this.props.value.time,
-      currentHour: this.props.value.time.hour,
-      currentMinute: this.props.value.time.minute,
-      currentSecond: this.props.value.time.second,
-      counter: 1
+      value: this.props.value.date,
+      counter: 1,
+      timepickerKey: 0,
+      calendarKey: 0
     };
 
     this.onTabChange = this.onTabChange.bind(this);
@@ -171,57 +172,41 @@ class RDSPwidget extends React.PureComponent {
     });
   }
 
-  componentWillReceiveProps(nextProps) {
-    let that = this;
-    setTimeout(function() {
-      Shiny.setInputValue(that.props.shinyId + ":shinyDatetimePickers.date", {
-        date: nextProps.value.date,
-        time: nextProps.value.time
-      });
-    }, 0);
-    this.setState({ date: nextProps.value.date, time: nextProps.value.time });
-    let tab = this.state.tab;
-    this.setState({ tab: 1-tab });
-    setTimeout(function() {
-      that.setState({ tab: tab });
-    }, 0);
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   alert("nextProps");
+  //   let that = this;
+  //   setTimeout(function() {
+  //     Shiny.setInputValue(that.props.shinyId + ":shinyDatetimePickers.date", {
+  //       date: nextProps.value.date,
+  //       time: nextProps.value.time
+  //     });
+  //   }, 0);
+  //   this.setState({ date: nextProps.value.date, time: nextProps.value.time });
+  //   let tab = this.state.tab;
+  //   this.setState({ tab: 1-tab });
+  //   setTimeout(function() {
+  //     that.setState({ tab: tab });
+  //   }, 0);
+  // }
 
-  componentDidMount() {
-    let that = this;
-    setTimeout(function(){
-      that.setState({time: that.state.time});
-    }, 0);
-  }
-  
-
-/*   componentDidMount() {
-    let state = this.state,
-      id = this.props.shinyId + ":shinyDatetimePickers.date";
-    setTimeout(function () {
-      Shiny.setInputValue(id, {
-        date: state.date,
-        time: state.time
-      });
-    }, 0);
-  }
- */
   render() {
 
     const updateValue = (value) => {
       let date = value.date;
       let time = value.time;
-      // if(!this.props.enableSecond) {
-      //   delete time.second;
-      // }
-      this.setState({ 
-        currentHour: time.hour,
-        currentMinute: time.minute,
-        currentSecond: time.second
+      this.setState({
+        date: date,
+        time: time
       });
-      //this.props.onChange();
+      let calendarKey = this.state.calendarKey;
+      let timepickerKey = this.state.timepickerKey;
       let id = this.props.shinyId + ":shinyDatetimePickers.date";
+      let that = this;
       setTimeout(function () {
+        that.setState({ 
+          calendarKey: calendarKey + 1,
+          timepickerKey: timepickerKey + 1
+        });
         Shiny.setInputValue(id, {
           date: date,
           time: time
@@ -233,44 +218,52 @@ class RDSPwidget extends React.PureComponent {
       updateValue(x);
     });
 
-
     const language = (this.props.language === 'ko') ? Language['ko'] : Language['en'];
 
     return (
       <div className='picker'>
         <div className='picker-tab'>
-          <Tabs
-            value={this.state.tab}
-            onChange={(event, value) => this.onTabChange(value)}
-            fullWidth
-            textColor='inherit'
-            classes={{ indicator: 'picker-tab-indicator' }}
-          >
-            <Tab 
-              label={language.date} 
-              icon={<Today />} 
-              classes={{ selected: 'selected' }} 
-            />
-            <Tab 
-              label={language.time} 
-              icon={<AccessTime />} 
-              classes={{ selected: 'selected' }} 
-            />
-          </Tabs>
-        </div>
-        <div className='picker-form'>
-          {(this.state.tab === 0) ?
-            <Calendar
-              language={this.props.language}
-              defaultValue={this.state.date}
-              onChange={(date) => this.onValueChange(true, date)}
-            /> :
-            <TimePicker
-              language={this.props.language}
-              enableSecond={this.props.enableSecond}
-              defaultValue={this.state.time}
-              onChange={(time) => this.onValueChange(false, time)}
-            />}
+          <TabContext value={this.state.tab}>
+            <AppBar position="static">
+              <TabList
+                onChange={(event, value) => this.onTabChange(value)}
+              >
+                <Tab 
+                  value={0}
+                  label={language.date} 
+                  icon={<Today />} 
+                  classes={{ selected: 'selected' }} 
+                />
+                <Tab 
+                  value={1}
+                  label={language.time} 
+                  icon={<AccessTime />} 
+                  classes={{ selected: 'selected' }} 
+                />
+              </TabList>
+            </AppBar>
+            <TabPanel value={0}>
+              <div className='picker-form'>
+                <Calendar
+                  key={this.state.calendarKey}
+                  language={this.props.language}
+                  defaultValue={this.state.date}
+                  onChange={(date) => this.onValueChange(true, date)}
+                />
+              </div>            
+            </TabPanel>
+            <TabPanel value={1}>
+              <div className='picker-form'>
+                <TimePicker
+                  key={this.state.timepickerKey}
+                  language={this.props.language}
+                  enableSecond={this.props.enableSecond}
+                  defaultValue={this.state.time}
+                  onChange={(time) => this.onValueChange(false, time)}
+                />
+              </div>          
+            </TabPanel>
+          </TabContext>
         </div>
         {this.props.save ?
           <div className='picker-footer'>
