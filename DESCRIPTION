@@ -1,6 +1,6 @@
 Package: shinyDatetimePickers
 Title: Some Datetime Pickers for 'Shiny'
-Version: 1.1.0
+Version: 1.2.0
 Authors@R: c(
     person("Stéphane", "Laurent", , "laurent_step@outlook.fr", role = c("aut", "cre")),
     person("Wojciech", "Maj", , "kontakt@wojtekmaj.pl", role = "cph",
@@ -22,4 +22,4 @@ Imports:
     reactR,
     shiny
 Encoding: UTF-8
-RoxygenNote: 7.2.2
+RoxygenNote: 7.2.3

@@ -302,6 +302,161 @@ var DateFnsUtils = /** @class */function () {
 
 /***/ }),
 
+/***/ "./node_modules/@material-ui/core/esm/AppBar/AppBar.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/AppBar/AppBar.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! clsx */ "./node_modules/@material-ui/core/node_modules/clsx/dist/clsx.m.js");
+/* harmony import */ var _styles_withStyles__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/esm/styles/withStyles.js");
+/* harmony import */ var _utils_capitalize__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/capitalize */ "./node_modules/@material-ui/core/esm/utils/capitalize.js");
+/* harmony import */ var _Paper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Paper */ "./node_modules/@material-ui/core/esm/Paper/Paper.js");
+
+
+
+
+
+
+
+
+var styles = function styles(theme) {
+  var backgroundColorDefault = theme.palette.type === 'light' ? theme.palette.grey[100] : theme.palette.grey[900];
+  return {
+    /* Styles applied to the root element. */
+    root: {
+      display: 'flex',
+      flexDirection: 'column',
+      width: '100%',
+      boxSizing: 'border-box',
+      // Prevent padding issue with the Modal and fixed positioned AppBar.
+      zIndex: theme.zIndex.appBar,
+      flexShrink: 0
+    },
+    /* Styles applied to the root element if `position="fixed"`. */
+    positionFixed: {
+      position: 'fixed',
+      top: 0,
+      left: 'auto',
+      right: 0,
+      '@media print': {
+        // Prevent the app bar to be visible on each printed page.
+        position: 'absolute'
+      }
+    },
+    /* Styles applied to the root element if `position="absolute"`. */
+    positionAbsolute: {
+      position: 'absolute',
+      top: 0,
+      left: 'auto',
+      right: 0
+    },
+    /* Styles applied to the root element if `position="sticky"`. */
+    positionSticky: {
+      // ⚠️ sticky is not supported by IE 11.
+      position: 'sticky',
+      top: 0,
+      left: 'auto',
+      right: 0
+    },
+    /* Styles applied to the root element if `position="static"`. */
+    positionStatic: {
+      position: 'static'
+    },
+    /* Styles applied to the root element if `position="relative"`. */
+    positionRelative: {
+      position: 'relative'
+    },
+    /* Styles applied to the root element if `color="default"`. */
+    colorDefault: {
+      backgroundColor: backgroundColorDefault,
+      color: theme.palette.getContrastText(backgroundColorDefault)
+    },
+    /* Styles applied to the root element if `color="primary"`. */
+    colorPrimary: {
+      backgroundColor: theme.palette.primary.main,
+      color: theme.palette.primary.contrastText
+    },
+    /* Styles applied to the root element if `color="secondary"`. */
+    colorSecondary: {
+      backgroundColor: theme.palette.secondary.main,
+      color: theme.palette.secondary.contrastText
+    },
+    /* Styles applied to the root element if `color="inherit"`. */
+    colorInherit: {
+      color: 'inherit'
+    },
+    /* Styles applied to the root element if `color="transparent"`. */
+    colorTransparent: {
+      backgroundColor: 'transparent',
+      color: 'inherit'
+    }
+  };
+};
+var AppBar = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.forwardRef(function AppBar(props, ref) {
+  var classes = props.classes,
+    className = props.className,
+    _props$color = props.color,
+    color = _props$color === void 0 ? 'primary' : _props$color,
+    _props$position = props.position,
+    position = _props$position === void 0 ? 'fixed' : _props$position,
+    other = (0,_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(props, ["classes", "className", "color", "position"]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(_Paper__WEBPACK_IMPORTED_MODULE_4__["default"], (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    square: true,
+    component: "header",
+    elevation: 4,
+    className: (0,clsx__WEBPACK_IMPORTED_MODULE_3__["default"])(classes.root, classes["position".concat((0,_utils_capitalize__WEBPACK_IMPORTED_MODULE_5__["default"])(position))], classes["color".concat((0,_utils_capitalize__WEBPACK_IMPORTED_MODULE_5__["default"])(color))], className, position === 'fixed' && 'mui-fixed'),
+    ref: ref
+  }, other));
+});
+ true ? AppBar.propTypes = {
+  // ----------------------------- Warning --------------------------------
+  // | These PropTypes are generated from the TypeScript type definitions |
+  // |     To update them edit the d.ts file and run "yarn proptypes"     |
+  // ----------------------------------------------------------------------
+
+  /**
+   * The content of the component.
+   */
+  children: (prop_types__WEBPACK_IMPORTED_MODULE_6___default().node),
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: (prop_types__WEBPACK_IMPORTED_MODULE_6___default().object),
+  /**
+   * @ignore
+   */
+  className: (prop_types__WEBPACK_IMPORTED_MODULE_6___default().string),
+  /**
+   * The color of the component. It supports those theme colors that make sense for this component.
+   */
+  color: prop_types__WEBPACK_IMPORTED_MODULE_6___default().oneOf(['default', 'inherit', 'primary', 'secondary', 'transparent']),
+  /**
+   * The positioning type. The behavior of the different options is described
+   * [in the MDN web docs](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning).
+   * Note: `sticky` is not universally supported and will fall back to `static` when unavailable.
+   */
+  position: prop_types__WEBPACK_IMPORTED_MODULE_6___default().oneOf(['absolute', 'fixed', 'relative', 'static', 'sticky'])
+} : 0;
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_styles_withStyles__WEBPACK_IMPORTED_MODULE_7__["default"])(styles, {
+  name: 'MuiAppBar'
+})(AppBar));
+
+/***/ }),
+
 /***/ "./node_modules/@material-ui/core/esm/Backdrop/Backdrop.js":
 /*!*****************************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/Backdrop/Backdrop.js ***!
@@ -14746,6 +14901,262 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_utils_createSvgIcon__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
   d: "M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"
 }), 'Today'));
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/lab/esm/TabContext/TabContext.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@material-ui/lab/esm/TabContext/TabContext.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ TabContext),
+/* harmony export */   getPanelId: () => (/* binding */ getPanelId),
+/* harmony export */   getTabId: () => (/* binding */ getTabId),
+/* harmony export */   useTabContext: () => (/* binding */ useTabContext)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+
+
+/**
+ * @type {React.Context<{ idPrefix: string; value: string } | null>}
+ */
+
+var Context = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createContext(null);
+if (true) {
+  Context.displayName = 'TabContext';
+}
+function useUniquePrefix() {
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0__.useState(null),
+    id = _React$useState[0],
+    setId = _React$useState[1];
+  react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function () {
+    setId("mui-p-".concat(Math.round(Math.random() * 1e5)));
+  }, []);
+  return id;
+}
+function TabContext(props) {
+  var children = props.children,
+    value = props.value;
+  var idPrefix = useUniquePrefix();
+  var context = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(function () {
+    return {
+      idPrefix: idPrefix,
+      value: value
+    };
+  }, [idPrefix, value]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Context.Provider, {
+    value: context
+  }, children);
+}
+ true ? TabContext.propTypes = {
+  // ----------------------------- Warning --------------------------------
+  // | These PropTypes are generated from the TypeScript type definitions |
+  // |     To update them edit the d.ts file and run "yarn proptypes"     |
+  // ----------------------------------------------------------------------
+
+  /**
+   * The content of the component.
+   */
+  children: prop_types__WEBPACK_IMPORTED_MODULE_1__.node,
+  /**
+   * The value of the currently selected `Tab`.
+   */
+  value: prop_types__WEBPACK_IMPORTED_MODULE_1__.string.isRequired
+} : 0;
+/**
+ * @returns {unknown}
+ */
+
+function useTabContext() {
+  return react__WEBPACK_IMPORTED_MODULE_0__.useContext(Context);
+}
+function getPanelId(context, value) {
+  var idPrefix = context.idPrefix;
+  if (idPrefix === null) {
+    return null;
+  }
+  return "".concat(context.idPrefix, "-P-").concat(value);
+}
+function getTabId(context, value) {
+  var idPrefix = context.idPrefix;
+  if (idPrefix === null) {
+    return null;
+  }
+  return "".concat(context.idPrefix, "-T-").concat(value);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/lab/esm/TabList/TabList.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@material-ui/lab/esm/TabList/TabList.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_core_Tabs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Tabs */ "./node_modules/@material-ui/core/esm/Tabs/Tabs.js");
+/* harmony import */ var _TabContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../TabContext */ "./node_modules/@material-ui/lab/esm/TabContext/TabContext.js");
+
+
+
+
+
+
+var TabList = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.forwardRef(function TabList(props, ref) {
+  var childrenProp = props.children,
+    other = (0,_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(props, ["children"]);
+  var context = (0,_TabContext__WEBPACK_IMPORTED_MODULE_3__.useTabContext)();
+  if (context === null) {
+    throw new TypeError('No TabContext provided');
+  }
+  var children = react__WEBPACK_IMPORTED_MODULE_2__.Children.map(childrenProp, function (child) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.cloneElement(child, {
+      // SOMEDAY: `Tabs` will set those themselves
+      'aria-controls': (0,_TabContext__WEBPACK_IMPORTED_MODULE_3__.getPanelId)(context, child.props.value),
+      id: (0,_TabContext__WEBPACK_IMPORTED_MODULE_3__.getTabId)(context, child.props.value)
+    });
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(_material_ui_core_Tabs__WEBPACK_IMPORTED_MODULE_4__["default"], (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, other, {
+    ref: ref,
+    value: context.value
+  }), children);
+});
+ true ? TabList.propTypes = {
+  children: prop_types__WEBPACK_IMPORTED_MODULE_5__.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_5__.element)
+} : 0;
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TabList);
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/lab/esm/TabPanel/TabPanel.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@material-ui/lab/esm/TabPanel/TabPanel.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! clsx */ "./node_modules/@material-ui/lab/node_modules/clsx/dist/clsx.m.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/withStyles.js");
+/* harmony import */ var _TabContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../TabContext */ "./node_modules/@material-ui/lab/esm/TabContext/TabContext.js");
+
+
+
+
+
+
+
+var styles = function styles(theme) {
+  return {
+    /* Styles applied to the root element. */
+    root: {
+      padding: theme.spacing(3)
+    }
+  };
+};
+var TabPanel = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.forwardRef(function TabPanel(props, ref) {
+  var children = props.children,
+    className = props.className,
+    classes = props.classes,
+    value = props.value,
+    other = (0,_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(props, ["children", "className", "classes", "value"]);
+  var context = (0,_TabContext__WEBPACK_IMPORTED_MODULE_4__.useTabContext)();
+  if (context === null) {
+    throw new TypeError('No TabContext provided');
+  }
+  var id = (0,_TabContext__WEBPACK_IMPORTED_MODULE_4__.getPanelId)(context, value);
+  var tabId = (0,_TabContext__WEBPACK_IMPORTED_MODULE_4__.getTabId)(context, value);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("div", (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    "aria-labelledby": tabId,
+    className: (0,clsx__WEBPACK_IMPORTED_MODULE_3__["default"])(classes.root, className),
+    hidden: value !== context.value,
+    id: id,
+    ref: ref,
+    role: "tabpanel"
+  }, other), value === context.value && children);
+});
+ true ? TabPanel.propTypes = {
+  // ----------------------------- Warning --------------------------------
+  // | These PropTypes are generated from the TypeScript type definitions |
+  // |     To update them edit the d.ts file and run "yarn proptypes"     |
+  // ----------------------------------------------------------------------
+
+  /**
+   * The content of the component.
+   */
+  children: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().node),
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().object),
+  /**
+   * @ignore
+   */
+  className: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().string),
+  /**
+   * The `value` of the corresponding `Tab`. Must use the index of the `Tab` when
+   * no `value` was passed to `Tab`.
+   */
+  value: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().string).isRequired
+} : 0;
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6__["default"])(styles, {
+  name: 'MuiTabPanel'
+})(TabPanel));
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/lab/node_modules/clsx/dist/clsx.m.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/@material-ui/lab/node_modules/clsx/dist/clsx.m.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   clsx: () => (/* binding */ clsx),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function r(e) {
+  var t,
+    f,
+    n = "";
+  if ("string" == typeof e || "number" == typeof e) n += e;else if ("object" == typeof e) if (Array.isArray(e)) for (t = 0; t < e.length; t++) e[t] && (f = r(e[t])) && (n && (n += " "), n += f);else for (t in e) e[t] && (n && (n += " "), n += t);
+  return n;
+}
+function clsx() {
+  for (var e, t, f = 0, n = ""; f < arguments.length;) (e = arguments[f++]) && (t = r(e)) && (n && (n += " "), n += t);
+  return n;
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (clsx);
 
 /***/ }),
 
@@ -77910,18 +78321,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_datetime_picker__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-datetime-picker */ "./node_modules/react-datetime-picker/dist/esm/index.js");
 /* harmony import */ var react_datetime_slider_picker_dist_Calendar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-datetime-slider-picker/dist/Calendar */ "./node_modules/react-datetime-slider-picker/dist/Calendar.js");
 /* harmony import */ var react_datetime_slider_picker_dist_TimePicker__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-datetime-slider-picker/dist/TimePicker */ "./node_modules/react-datetime-slider-picker/dist/TimePicker.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Tabs/Tabs.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Tab/Tab.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Button/Button.js");
-/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/Today.js");
-/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/AccessTime.js");
-/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/CheckCircleOutline.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/AppBar/AppBar.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Tab/Tab.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Button/Button.js");
+/* harmony import */ var _material_ui_lab__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/lab */ "./node_modules/@material-ui/lab/esm/TabContext/TabContext.js");
+/* harmony import */ var _material_ui_lab__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/lab */ "./node_modules/@material-ui/lab/esm/TabList/TabList.js");
+/* harmony import */ var _material_ui_lab__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/lab */ "./node_modules/@material-ui/lab/esm/TabPanel/TabPanel.js");
+/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/Today.js");
+/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/AccessTime.js");
+/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/CheckCircleOutline.js");
 /* harmony import */ var react_datetime_slider_picker_public_Language__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-datetime-slider-picker/public/Language */ "./node_modules/react-datetime-slider-picker/public/Language.js");
 /* harmony import */ var react_datetime_slider_picker_public_Language__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_datetime_slider_picker_public_Language__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _material_ui_pickers__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/pickers */ "./node_modules/@material-ui/pickers/esm/useUtils-cfb96ac9.js");
-/* harmony import */ var _material_ui_pickers__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/pickers */ "./node_modules/@material-ui/pickers/esm/DateTimePicker.js");
+/* harmony import */ var _material_ui_pickers__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @material-ui/pickers */ "./node_modules/@material-ui/pickers/esm/useUtils-cfb96ac9.js");
+/* harmony import */ var _material_ui_pickers__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @material-ui/pickers */ "./node_modules/@material-ui/pickers/esm/DateTimePicker.js");
 /* harmony import */ var _date_io_date_fns__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @date-io/date-fns */ "./node_modules/@date-io/date-fns/build/index.esm.js");
 // jshint esversion: 6
+
 
 
 
@@ -77976,6 +78391,13 @@ class RDPwidget extends React.PureComponent {
 
   // jshint ignore: start
   render() {
+    var updateValue = v => {
+      var value = new Date(v.date.year, v.date.month - 1, v.date.date, v.time.hour, v.time.minute, v.time.second);
+      this.onChange(value);
+    };
+    Shiny.addCustomMessageHandler("updateValue_" + this.props.shinyId, function (x) {
+      updateValue(x);
+    });
     return /*#__PURE__*/React.createElement(react_datetime_picker__WEBPACK_IMPORTED_MODULE_5__["default"], {
       onChange: this.onChange,
       value: this.state.value,
@@ -78024,7 +78446,10 @@ class RDSPwidget extends React.PureComponent {
       tab: 0,
       date: this.props.value.date,
       time: this.props.value.time,
-      counter: 1
+      value: this.props.value.date,
+      counter: 1,
+      timepickerKey: 0,
+      calendarKey: 0
     };
     this.onTabChange = this.onTabChange.bind(this);
     this.onValueChange = this.onValueChange.bind(this);
@@ -78072,84 +78497,101 @@ class RDSPwidget extends React.PureComponent {
       priority: "event"
     });
   }
-  componentWillReceiveProps(nextProps) {
-    var that = this;
-    setTimeout(function () {
-      Shiny.setInputValue(that.props.shinyId + ":shinyDatetimePickers.date", {
-        date: nextProps.value.date,
-        time: nextProps.value.time
-      });
-    }, 0);
-    this.setState({
-      date: nextProps.value.date,
-      time: nextProps.value.time
-    });
-    var tab = this.state.tab;
-    this.setState({
-      tab: 1 - tab
-    });
-    setTimeout(function () {
-      that.setState({
-        tab: tab
-      });
-    }, 0);
-  }
 
-  /*   componentDidMount() {
-      let state = this.state,
-        id = this.props.shinyId + ":shinyDatetimePickers.date";
+  // componentWillReceiveProps(nextProps) {
+  //   alert("nextProps");
+  //   let that = this;
+  //   setTimeout(function() {
+  //     Shiny.setInputValue(that.props.shinyId + ":shinyDatetimePickers.date", {
+  //       date: nextProps.value.date,
+  //       time: nextProps.value.time
+  //     });
+  //   }, 0);
+  //   this.setState({ date: nextProps.value.date, time: nextProps.value.time });
+  //   let tab = this.state.tab;
+  //   this.setState({ tab: 1-tab });
+  //   setTimeout(function() {
+  //     that.setState({ tab: tab });
+  //   }, 0);
+  // }
+
+  render() {
+    var updateValue = value => {
+      var date = value.date;
+      var time = value.time;
+      this.setState({
+        date: date,
+        time: time
+      });
+      var calendarKey = this.state.calendarKey;
+      var timepickerKey = this.state.timepickerKey;
+      var id = this.props.shinyId + ":shinyDatetimePickers.date";
+      var that = this;
       setTimeout(function () {
+        that.setState({
+          calendarKey: calendarKey + 1,
+          timepickerKey: timepickerKey + 1
+        });
         Shiny.setInputValue(id, {
-          date: state.date,
-          time: state.time
+          date: date,
+          time: time
         });
       }, 0);
-    }
-   */
-  render() {
+    };
+    Shiny.addCustomMessageHandler("updateValue_" + this.props.shinyId, function (x) {
+      updateValue(x);
+    });
     var language = this.props.language === 'ko' ? (react_datetime_slider_picker_public_Language__WEBPACK_IMPORTED_MODULE_3___default().ko) : (react_datetime_slider_picker_public_Language__WEBPACK_IMPORTED_MODULE_3___default().en);
     return /*#__PURE__*/React.createElement("div", {
       className: "picker"
     }, /*#__PURE__*/React.createElement("div", {
       className: "picker-tab"
-    }, /*#__PURE__*/React.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["default"], {
-      value: this.state.tab,
-      onChange: (event, value) => this.onTabChange(value),
-      fullWidth: true,
-      textColor: "inherit",
-      classes: {
-        indicator: 'picker-tab-indicator'
-      }
+    }, /*#__PURE__*/React.createElement(_material_ui_lab__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      value: this.state.tab
     }, /*#__PURE__*/React.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      position: "static"
+    }, /*#__PURE__*/React.createElement(_material_ui_lab__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      onChange: (event, value) => this.onTabChange(value)
+    }, /*#__PURE__*/React.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      value: 0,
       label: language.date,
-      icon: /*#__PURE__*/React.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_8__["default"], null),
+      icon: /*#__PURE__*/React.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_10__["default"], null),
       classes: {
         selected: 'selected'
       }
-    }), /*#__PURE__*/React.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    }), /*#__PURE__*/React.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      value: 1,
       label: language.time,
-      icon: /*#__PURE__*/React.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_9__["default"], null),
+      icon: /*#__PURE__*/React.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_11__["default"], null),
       classes: {
         selected: 'selected'
       }
-    }))), /*#__PURE__*/React.createElement("div", {
+    }))), /*#__PURE__*/React.createElement(_material_ui_lab__WEBPACK_IMPORTED_MODULE_12__["default"], {
+      value: 0
+    }, /*#__PURE__*/React.createElement("div", {
       className: "picker-form"
-    }, this.state.tab === 0 ? /*#__PURE__*/React.createElement(react_datetime_slider_picker_dist_Calendar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    }, /*#__PURE__*/React.createElement(react_datetime_slider_picker_dist_Calendar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      key: this.state.calendarKey,
       language: this.props.language,
       defaultValue: this.state.date,
       onChange: date => this.onValueChange(true, date)
-    }) : /*#__PURE__*/React.createElement(react_datetime_slider_picker_dist_TimePicker__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }))), /*#__PURE__*/React.createElement(_material_ui_lab__WEBPACK_IMPORTED_MODULE_12__["default"], {
+      value: 1
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "picker-form"
+    }, /*#__PURE__*/React.createElement(react_datetime_slider_picker_dist_TimePicker__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      key: this.state.timepickerKey,
       language: this.props.language,
       enableSecond: this.props.enableSecond,
       defaultValue: this.state.time,
       onChange: time => this.onValueChange(false, time)
-    })), this.props.save ? /*#__PURE__*/React.createElement("div", {
+    }))))), this.props.save ? /*#__PURE__*/React.createElement("div", {
       className: "picker-footer"
     }, /*#__PURE__*/React.createElement("div", {
       onClick: () => this.onSave()
-    }, /*#__PURE__*/React.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    }, /*#__PURE__*/React.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_13__["default"], {
       fullWidth: true
-    }, /*#__PURE__*/React.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_11__["default"], null), language.save))) : null);
+    }, /*#__PURE__*/React.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_14__["default"], null), language.save))) : null);
   }
 }
 var RDSPinput = _ref2 => {
@@ -78216,8 +78658,6 @@ class MUIwidget extends React.PureComponent {
       }
     };
     Shiny.setInputValue(this.props.shinyId + ":shinyDatetimePickers.date", x);
-    console.log("x", x);
-    console.log("value", value);
     this.setState({
       value: value
     });
@@ -78229,9 +78669,16 @@ class MUIwidget extends React.PureComponent {
     }, 0);
   }
   render() {
-    return /*#__PURE__*/React.createElement(_material_ui_pickers__WEBPACK_IMPORTED_MODULE_12__.M, {
+    var updateValue = v => {
+      var value = new Date(v.date.year, v.date.month - 1, v.date.date, v.time.hour, v.time.minute, v.time.second);
+      this.onChange(value);
+    };
+    Shiny.addCustomMessageHandler("updateValue_" + this.props.shinyId, function (x) {
+      updateValue(x);
+    });
+    return /*#__PURE__*/React.createElement(_material_ui_pickers__WEBPACK_IMPORTED_MODULE_15__.M, {
       utils: _date_io_date_fns__WEBPACK_IMPORTED_MODULE_4__["default"]
-    }, /*#__PURE__*/React.createElement(_material_ui_pickers__WEBPACK_IMPORTED_MODULE_13__.DateTimePicker, {
+    }, /*#__PURE__*/React.createElement(_material_ui_pickers__WEBPACK_IMPORTED_MODULE_16__.DateTimePicker, {
       value: this.state.value,
       onChange: this.onChange,
       ampm: false,
